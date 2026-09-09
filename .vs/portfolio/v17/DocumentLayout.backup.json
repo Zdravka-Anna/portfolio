@@ -14,8 +14,20 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +36,7 @@
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "C:\\Users\\Andriy\\OneDrive - lnu.edu.ua\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\portfolio\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAEoAAAAAAAAAAADwv0cAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAABYBAAAAAAAAAAAiwAoBAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-09-04T19:25:13.64Z",
               "EditorCaption": ""
