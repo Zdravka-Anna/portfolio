@@ -6,7 +6,6 @@
     <title>Портфоліо — Здравка Анна</title>
     <meta name="description" content="Студентське портфоліо: освіта, навички, досягнення та контакти." />
 
-    <!-- Open Graph метадані (Вимога 4.2 ТЗ) -->
     <meta property="og:title" content="Портфоліо — Здравка Анна" />
     <meta property="og:description" content="Студентське портфоліо: освіта, навички, досягнення та контакти." />
     <meta property="og:image" content="img/og-preview.webp" />
@@ -15,50 +14,47 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <!-- Спеціальне посилання для доступності -->
+
     <a class="skip-link" href="#main">Перейти до основного вмісту</a>
 
-    <!-- Шапка сайту з адаптивним меню без JS (Пункти 4.3 та 6 ТЗ) -->
     <header class="header">
-        <div class="header__container">
-            <a href="#about" class="header__logo">Анна Здравка</a>
+        <div class="header_container">
+            <a href="#about" class="header_logo">Анна Здравка</a>
             <nav class="nav" aria-label="Головне меню">
-                <details class="nav__details">
-                    <summary class="nav__summary" aria-label="Відкрити меню навігації">Меню</summary>
-                    <ul class="nav__list">
-                        <li><a class="nav__link" href="#about">Про мене</a></li>
-                        <li><a class="nav__link" href="#university">Освіта</a></li>
-                        <li><a class="nav__link" href="#skill">Навички</a></li>
-                        <li><a class="nav__link" href="#reading-stats">Щоденник</a></li>
-                        <li><a class="nav__link" href="#travel">Подорожі</a></li>
-                        <li><a class="nav__link" href="#projects-achievements">Досягнення</a></li>
-                        <li><a class="nav__link" href="#contact">Контакти</a></li>
+                <details class="nav_details">
+                    <summary class="nav_summary" aria-label="Відкрити меню навігації">Меню</summary>
+                    <ul class="nav_list">
+                        <li><a class="nav_link" href="#about">Про мене</a></li>
+                        <li><a class="nav_link" href="#university">Освіта</a></li>
+                        <li><a class="nav_link" href="#skill">Навички</a></li>
+                        <li><a class="nav_link" href="#reading-stats">Щоденник</a></li>
+                        <li><a class="nav_link" href="#travel">Подорожі</a></li>
+                        <li><a class="nav_link" href="#projects-achievements">Досягнення</a></li>
+                        <li><a class="nav_link" href="#contact">Контакти</a></li>
                     </ul>
                 </details>
             </nav>
         </div>
     </header>
 
-    <!-- Основний вміст сайту -->
     <main id="main">
         <h1>Портфоліо Здравки Анни</h1>
 
-        <!-- 1. Про мене -->
         <section id="about" class="about">
             <h2>Про мене</h2>
-            <div class="about__container">
-                <picture class="about__picture">
+            <div class="about_container">
+                <picture class="about_picture">
                     <source media="(min-width: 1200px)" srcset="img/profile-desktop.webp" />
                     <source media="(min-width: 768px)" srcset="img/profile-tablet.webp" />
                     <img src="img/profile-mobile.webp"
                          alt="Фото Анни Здравки"
-                         class="about__img"
+                         class="about_img"
                          width="320"
                          height="320"
                          loading="lazy" />
                 </picture>
 
-                <div class="about__bio">
+                <div class="about_bio">
                     <p>
                         Мене звати <strong>Анна Здравка</strong>. Я студентка третього курсу Львівського національного університету імені Івана Франка за спеціальністю «Прикладна математика та інформатика».
                     </p>
@@ -66,8 +62,8 @@
                         У своїй діяльності поєдную точність математичного аналізу з творчим підходом, цікавлюся тестуванням програмного забезпечення та викладанням. Прагну перетворювати теоретичні знання на якісні практичні рішення й постійно опановую нові технології.
                     </p>
 
-                    <address class="about__contacts">
-                        <ul class="about__contacts-list">
+                    <address class="about_contacts">
+                        <ul class="about_contacts-list">
                             <li><strong>Місто:</strong> Львів, Україна</li>
                             <li><strong>Email:</strong> <a href="mailto:aniazdravka@gmail.com">aniazdravka@gmail.com</a></li>
                             <li><strong>Телефон:</strong> <a href="tel:+380989243310">+38 (098) 924-33-10</a></li>
@@ -78,7 +74,6 @@
             </div>
         </section>
 
-        <!-- 2. Школа -->
         <section id="school">
             <h2>Освіта: Школа</h2>
             <p>
@@ -93,7 +88,6 @@
             </p>
         </section>
 
-        <!-- 3. Університет -->
         <section id="university">
             <h2>Освіта: Університет</h2>
             <p>
@@ -104,7 +98,6 @@
             </p>
         </section>
 
-        <!-- 4. Улюблені предмети -->
         <section id="favsubjects">
             <h2>Улюблені навчальні предмети</h2>
             <ul>
@@ -114,7 +107,6 @@
             </ul>
         </section>
 
-        <!-- 5. Навички -->
         <section id="skill">
             <h2>Навички</h2>
 
@@ -138,66 +130,64 @@
             </ul>
         </section>
 
-        <!-- 6. Хобі -->
         <section id="hobby" class="hobby">
             <h2>Хобі та захоплення</h2>
             <div class="hobby-grid">
                 <article class="hobby-card">
-                    <span class="hobby-card__icon" aria-hidden="true">💃</span>
-                    <h3 class="hobby-card__title">Хореографія та танці</h3>
-                    <p class="hobby-card__desc">Рух, пластика, музичність і спосіб перезавантажити розум через фізичну експресію.</p>
+                    <span class="hobby-card_icon" aria-hidden="true">💃</span>
+                    <h3 class="hobby-card_title">Хореографія та танці</h3>
+                    <p class="hobby-card_desc">Рух, пластика, музичність і спосіб перезавантажити розум через фізичну експресію.</p>
                 </article>
 
                 <article class="hobby-card">
-                    <span class="hobby-card__icon" aria-hidden="true">📚</span>
-                    <h3 class="hobby-card__title">Читання</h3>
-                    <p class="hobby-card__desc">Українська література XX століття (зокрема доба Розстріляного відродження та шістдесятники), а також професійний і розвиваючий нон-фікшн.</p>
+                    <span class="hobby-card_icon" aria-hidden="true">📚</span>
+                    <h3 class="hobby-card_title">Читання</h3>
+                    <p class="hobby-card_desc">Українська література XX століття (зокрема доба Розстріляного відродження та шістдесятники), а також професійний і розвиваючий нон-фікшн.</p>
                 </article>
 
                 <article class="hobby-card">
-                    <span class="hobby-card__icon" aria-hidden="true">📐</span>
-                    <h3 class="hobby-card__title">Репетиторство</h3>
-                    <p class="hobby-card__desc">Не просто робота, а щире захоплення процесом: запалювати інтерес до математики та показувати її логічну красу.</p>
+                    <span class="hobby-card_icon" aria-hidden="true">📐</span>
+                    <h3 class="hobby-card_title">Репетиторство</h3>
+                    <p class="hobby-card_desc">Не просто робота, а щире захоплення процесом: запалювати інтерес до математики та показувати її логічну красу.</p>
                 </article>
 
                 <article class="hobby-card">
-                    <span class="hobby-card__icon" aria-hidden="true">🏃‍♀️</span>
-                    <h3 class="hobby-card__title">Пробіжки та спорт</h3>
-                    <p class="hobby-card__desc">Дисципліна, витривалість, тренування фокусу та заряд чистої енергії на весь день.</p>
+                    <span class="hobby-card_icon" aria-hidden="true">🏃‍♀️</span>
+                    <h3 class="hobby-card_title">Пробіжки та спорт</h3>
+                    <p class="hobby-card_desc">Дисципліна, витривалість, тренування фокусу та заряд чистої енергії на весь день.</p>
                 </article>
             </div>
         </section>
 
-        <!-- 7. Улюблені книги -->
         <section id="favbooks">
             <h2>Улюблені книги</h2>
             <ul>
                 <li>
-                    <img src="img/book-surgeon.webp" alt="Обкладинка книги Хірург" width="120" height="180" loading="lazy" />
+                    <img src="img/book-surgeon.jpg" alt="Обкладинка книги Хірург" width="120" height="180" loading="lazy" />
                     <strong>Автор:</strong> Тесс Геррітсен<br />
                     <strong>Назва:</strong> Хірург <br />
                     <strong>Моє враження:</strong> Цикл Тесс Геррітсен був частиною мого життя протягом останніх двох років. Мене захоплює не лише детективна складова та пошук винуватців, а й історії самих героїнь — Джейн і Мори, їхня внутрішня боротьба, характери та стосунки. Саме поєднання напруженого сюжету й добре прописаних персонажів змушує повертатися до цих книг знову.<br />
                 </li>
                 <li>
-                    <img src="img/book-darkness.webp" alt="Обкладинка книги Я бачу вас цікавить пітьма" width="120" height="180" loading="lazy" />
+                    <img src="img/book-darkness.jpg" alt="Обкладинка книги Я бачу вас цікавить пітьма" width="120" height="180" loading="lazy" />
                     <strong>Автор:</strong> Ілларіон Павлюк<br />
                     <strong>Назва:</strong> Я бачу вас цікавить пітьма<br />
                     <strong>Моє враження:</strong> Ця книга сподобалася мені великою кількістю загадок, несподіваних деталей та історично-літературних відсилок. Її зміст настільки багатошаровий, що після першого прочитання залишається відчуття, ніби не все вдалося помітити й зрозуміти. Саме тому ця історія ще довго залишається в думках після прочитання.<br />
                 </li>
                 <li>
-                    <img src="img/book-evans.webp" alt="Обкладинка книги Чому не Еванс?" width="120" height="180" loading="lazy" />
+                    <img src="img/book-evans.jpg" alt="Обкладинка книги Чому не Еванс?" width="120" height="180" loading="lazy" />
                     <strong>Автор:</strong> Агата Крісті<br />
                     <strong>Назва:</strong> Чому не Еванс? <br />
                     <strong>Моє враження:</strong> Одна з тих книг, які нагадують, чому детективи Агати Крісті вважають класикою жанру. Мені подобається її сюжет, атмосфера та те, як поступово розкривається загадка. Це книга, яка дарує приємні вечори за читанням і залишає після себе теплі спогади.<br />
                 </li>
                 <li>
-                    <img src="img/book-maid.webp" alt="Обкладинка книги Служниця" width="120" height="180" loading="lazy" />
+                    <img src="img/book-maid.jpg" alt="Обкладинка книги Служниця" width="120" height="180" loading="lazy" />
                     <strong>Автор:</strong> Фріда мак Фадден <br />
                     <strong>Назва:</strong> Служниця <br />
                     <strong>Моє враження:</strong> «Служниця» стала моїм першим знайомством із творчістю Фріди Мак-Фадден. Найбільше мене вразила кінцівка — саме вона викликала бажання прочитати й інші книги авторки. Після цього знайомства її твори почали з'являтися у моєму списку читання один за одним.<br />
                 </li>
                 <li>
-                    <img src="img/book-chemistry.webp" alt="Обкладинка книги Хімія смерті" width="120" height="180" loading="lazy" />
+                    <img src="img/book-chemistry.jpg" alt="Обкладинка книги Хімія смерті" width="120" height="180" loading="lazy" />
                     <strong>Автор:</strong> Саймон Бекетт<br />
                     <strong>Назва:</strong> Хімія смерті <br />
                     <strong>Моє враження:</strong> Похмура, напружена та водночас надзвичайно захоплива історія. Книга занурює у моторошну атмосферу маленького містечка, його таємниці та розслідування, від якого складно відірватися. Саме ця напруга тримається практично до останньої сторінки.<br />
@@ -205,7 +195,6 @@
             </ul>
         </section>
 
-        <!-- 8. Обов'язкова таблиця (Вимога 4.5 ТЗ) -->
         <section id="reading-stats">
             <h2>Читацький щоденник</h2>
             <div class="table-container">
@@ -249,7 +238,6 @@
             </div>
         </section>
 
-        <!-- 9. Улюблена музика -->
         <section id="favmusic">
             <h2>Улюблена музика</h2>
             <ul>
@@ -260,42 +248,41 @@
             </ul>
         </section>
 
-        <!-- 10. Улюблені фільми та серіали -->
         <section id="favfilms">
             <h2>Улюблені фільми або серіали</h2>
             <ul>
                 <li>
-                    <img src="img/film-potter.webp" alt="Постер фільму Гаррі Поттер" width="100" height="150" loading="lazy" />
+                    <img src="img/film-potter.jpg" alt="Постер фільму Гаррі Поттер" width="100" height="150" loading="lazy" />
                     <strong>Назва:</strong> Гаррі Поттер (серія фільмів)<br>
                     <strong>Рік:</strong> <time datetime="2001">2001</time>–<time datetime="2011">2011</time><br>
                     <strong>Моя оцінка:</strong> 8/10
                 </li>
                 <li>
-                    <img src="img/film-pirates.webp" alt="Постер фільму Пірати Карибського моря" width="100" height="150" loading="lazy" />
+                    <img src="img/film-pirates.jpg" alt="Постер фільму Пірати Карибського моря" width="100" height="150" loading="lazy" />
                     <strong>Назва:</strong> Пірати Карибського моря (серія фільмів)<br>
                     <strong>Рік:</strong> <time datetime="2003">2003</time>–<time datetime="2017">2017</time><br>
                     <strong>Моя оцінка:</strong> 8/10
                 </li>
                 <li>
-                    <img src="img/film-elementary.webp" alt="Постер серіалу Елементарно" width="100" height="150" loading="lazy" />
+                    <img src="img/film-elementary.jpg" alt="Постер серіалу Елементарно" width="100" height="150" loading="lazy" />
                     <strong>Назва:</strong> Елементарно<br>
                     <strong>Рік:</strong> <time datetime="2012">2012</time>–<time datetime="2019">2019</time><br>
                     <strong>Моя оцінка:</strong> 9/10
                 </li>
                 <li>
-                    <img src="img/film-sherlock.webp" alt="Постер серіалу Шерлок" width="100" height="150" loading="lazy" />
+                    <img src="img/film-sherlock.jpg" alt="Постер серіалу Шерлок" width="100" height="150" loading="lazy" />
                     <strong>Назва:</strong> Шерлок<br>
                     <strong>Рік:</strong> <time datetime="2010">2010</time>–<time datetime="2017">2017</time><br>
                     <strong>Моя оцінка:</strong> 7/10
                 </li>
                 <li>
-                    <img src="img/film-money-heist.webp" alt="Постер серіалу Паперовий будинок" width="100" height="150" loading="lazy" />
+                    <img src="img/film-money-heist.jpg" alt="Постер серіалу Паперовий будинок" width="100" height="150" loading="lazy" />
                     <strong>Назва:</strong> Паперовий будинок<br>
                     <strong>Рік:</strong> <time datetime="2017">2017</time>–<time datetime="2021">2021</time><br>
                     <strong>Моя оцінка:</strong> 5/10
                 </li>
                 <li>
-                    <img src="img/film-spiderman.webp" alt="Постер фільму Людина-павук" width="100" height="150" loading="lazy" />
+                    <img src="img/film-spiderman.jpg" alt="Постер фільму Людина-павук" width="100" height="150" loading="lazy" />
                     <strong>Назва:</strong> Людина-павук<br>
                     <strong>Рік:</strong> <time datetime="2017">2017</time>–<time datetime="2021">2021</time><br>
                     <strong>Моя оцінка:</strong> 5/10
@@ -303,7 +290,6 @@
             </ul>
         </section>
 
-        <!-- 11. Спорт та активності -->
         <section id="sport-activities">
             <h2>Спорт та активності</h2>
 
@@ -338,11 +324,10 @@
             <p>Танці — це моя душа, мій спокій і мій спосіб дихати. І скільки б не змінювалося в моєму житті, я хочу, щоб вони в ньому залишалися.</p>
         </section>
 
-        <!-- 12. Подорожі та пам'ятні місця (Вимога 4.3 ТЗ: <figure> + <figcaption>) -->
         <section id="travel">
             <h2>Подорожі та пам'ятні місця</h2>
             <div class="travel-gallery">
-                <figure class="travel-gallery__item">
+                <figure class="travel-gallery_item">
                     <img src="img/travel-slavske.webp"
                          alt="Краєвид Карпатських гір у селищі Славсько"
                          width="600"
@@ -351,7 +336,7 @@
                     <figcaption><strong>Славсько, Карпати:</strong> ранкова прохолода, підйоми на вершини та найкраще місце для повного перезавантаження від міського ритму.</figcaption>
                 </figure>
 
-                <figure class="travel-gallery__item">
+                <figure class="travel-gallery_item">
                     <img src="img/travel-lviv.webp"
                          alt="Старовинні вулиці вечірнього Львова"
                          width="600"
@@ -360,7 +345,7 @@
                     <figcaption><strong>Рідний Львів:</strong> затишні провулки, архітектура старого міста та натхнення для довгих піших прогулянок.</figcaption>
                 </figure>
 
-                <figure class="travel-gallery__item">
+                <figure class="travel-gallery_item">
                     <img src="img/travel-nature.webp"
                          alt="Озеро серед лісового масиву"
                          width="600"
@@ -371,7 +356,6 @@
             </div>
         </section>
 
-        <!-- 13. Проєкти та досягнення -->
         <section id="projects-achievements">
             <h2>Проєкти та досягнення</h2>
             <ul>
@@ -384,7 +368,6 @@
             </ul>
         </section>
 
-        <!-- 14. Цілі на рік -->
         <section id="goals">
             <h2>Цілі на найближчий рік</h2>
             <ul>
@@ -427,7 +410,6 @@
             </ul>
         </section>
 
-        <!-- 15. Цікаві факти -->
         <section id="interesting">
             <h2>Цікаві факти про мене</h2>
             <ul>
@@ -442,7 +424,6 @@
             </ul>
         </section>
 
-        <!-- 16. Цитати -->
         <section id="favquotes">
             <h2>Улюблені цитати</h2>
             <blockquote>
@@ -467,7 +448,6 @@
             </blockquote>
         </section>
 
-        <!-- 17. Контакти та форма (Вимога 3.16 ТЗ) -->
         <section id="contact">
             <h2>Контакти та зворотний зв'язок</h2>
             <p>Завжди відкрита до спілкування, нових пропозицій та співпраці:</p>
@@ -480,7 +460,6 @@
                 <li><strong>Локація:</strong> Львів, Україна</li>
             </ul>
 
-            <!-- Обов'язкова форма з вбудованою браузерною валідацією за п. 3.16 -->
             <form class="contact-form" action="#" method="post">
                 <div class="form-group">
                     <label for="user-name">Ваше ім'я:</label>
@@ -517,15 +496,14 @@
         </section>
     </main>
 
-    <!-- Підвал сайту (Вимога 3.17 ТЗ) -->
     <footer class="footer">
         <p>&copy; <time datetime="2026">2026</time> Здравка Анна. Усі права захищено.</p>
-        <ul class="footer__socials">
+        <ul class="footer_socials">
             <li><a href="https://t.me/anettizx" target="_blank" rel="noopener noreferrer">Telegram</a></li>
             <li><a href="https://instagram.com/anettizx" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             <li><a href="mailto:aniazdravka@gmail.com">Email</a></li>
         </ul>
-        <p><a href="#main" class="footer__to-top">↑ Повернутися нагору</a></p>
+        <p><a href="#main" class="footer_to-top">↑ Повернутися нагору</a></p>
     </footer>
 </body>
 </html>
