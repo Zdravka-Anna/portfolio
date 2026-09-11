@@ -1,42 +1,39 @@
 ﻿/* =========================================
-   1. ЗМІННІ (CSS Variables)
+   1. ШРИФТИ ТА ЗМІННІ (CSS Variables)
    ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
 :root {
-	/* Палітра кольорів (Натхненна референсом: пиловий блакитний та темно-синій) */
-	--bg-color: #ffffff; /* Основний фон білий */
-	--bg-alt: #b4d2db; /* Блакитний фон для чергування секцій */
-	--text-color: #2c3e50; /* Темно-сизий/графітовий текст */
-	--primary-color: #1a2a3a; /* Глибокий темно-синій (для акцентів/заголовків) */
-	--primary-hover: #34495e;
-	--secondary-color: #5c6c7b;
+	--bg-color: #fcfbf9;
+	--bg-alt: #f4f1ea;
+	--text-color: #384038;
+	--primary-color: #6a806a;
+	--primary-hover: #546654;
+	--secondary-color: #8b998b;
 	--card-bg: #ffffff;
-	--border-color: #d1dadd;
-	/* Шрифтові стеки (елегантний Serif для заголовків) */
-	--font-main: "Helvetica Neue", Arial, sans-serif;
-	--font-heading: "Playfair Display", "Georgia", serif;
-	/* Відступи та радіуси (більш гострі кути, як на макеті) */
-	--spacing-sm: 0.5rem;
-	--spacing-md: 1rem;
-	--spacing-lg: 3rem; /* Збільшено для "дихання" між секціями */
-	--radius-md: 4px;
-	/* Тіні (дуже м'які) */
-	--shadow-sm: 0 2px 10px rgba(26, 42, 58, 0.05);
-	--shadow-md: 0 10px 30px rgba(26, 42, 58, 0.08);
+	--border-color: #e0ded8;
+	--font-main: 'Inter', sans-serif;
+	--font-heading: 'Playfair Display', serif;
+	--spacing-sm: 0.75rem;
+	--spacing-md: 1.5rem;
+	--spacing-lg: 4rem;
+	--radius-md: 12px;
+	--shadow-sm: 0 4px 10px rgba(106, 128, 106, 0.05);
+	--shadow-md: 0 10px 30px rgba(106, 128, 106, 0.08);
 }
 
-/* Автоматична темна тема */
 @media (prefers-color-scheme: dark) {
 	:root {
-		--bg-color: #121619;
-		--bg-alt: #1a242b;
-		--text-color: #e0e6ed;
-		--primary-color: #79a3c1;
-		--primary-hover: #98badd;
-		--secondary-color: #8899a6;
-		--card-bg: #1e2933;
-		--border-color: #2c3e50;
-		--shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
-		--shadow-md: 0 8px 16px rgba(0, 0, 0, 0.5);
+		--bg-color: #1a1c1a;
+		--bg-alt: #222622;
+		--text-color: #e4e6e4;
+		--primary-color: #8ca38c;
+		--primary-hover: #a5bda5;
+		--secondary-color: #718071;
+		--card-bg: #272c27;
+		--border-color: #3b423b;
+		--shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.3);
+		--shadow-md: 0 15px 30px rgba(0, 0, 0, 0.5);
 	}
 }
 
@@ -53,13 +50,11 @@ html {
 	scroll-behavior: smooth;
 }
 
-/* Зміщення для якірних посилань (щоб шапка не перекривала заголовки) */
 section {
-	scroll-margin-top: 4rem; /* Трохи зменшено під нову шапку */
+	scroll-margin-top: 5rem;
 	padding: var(--spacing-lg) var(--spacing-md);
 }
 
-	/* Чергування кольору фону секцій (як на макеті) */
 	section:nth-of-type(even) {
 		background-color: var(--bg-alt);
 	}
@@ -72,28 +67,32 @@ body {
 	background-color: var(--bg-color);
 	color: var(--text-color);
 	font-family: var(--font-main);
-	/* Адаптивна типографіка тексту */
 	font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-	line-height: 1.6;
+	line-height: 1.7;
 }
 
-/* Приховане посилання для клавіатурної навігації (Accessibility) */
+img, picture, video, iframe {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
 .skip-link {
 	position: absolute;
 	top: -100%;
 	left: var(--spacing-md);
 	background: var(--primary-color);
 	color: #fff;
-	padding: var(--spacing-md);
+	padding: var(--spacing-sm) var(--spacing-md);
+	border-radius: var(--radius-md);
 	z-index: 1000;
 	transition: top 0.3s ease;
 }
 
 	.skip-link:focus-visible {
-		top: 0;
+		top: var(--spacing-sm);
 	}
 
-/* Видимий фокус для всіх елементів */
 :focus-visible {
 	outline: 2px dashed var(--primary-color);
 	outline-offset: 4px;
@@ -106,22 +105,32 @@ h1, h2, h3 {
 	font-family: var(--font-heading);
 	margin-bottom: var(--spacing-md);
 	color: var(--primary-color);
-	font-weight: 600; /* Трохи легша вага для елегантності */
+	font-weight: 600;
+	letter-spacing: -0.02em;
 }
 
-/* Адаптивні заголовки через clamp() */
 h1 {
-	font-size: clamp(2rem, 1.5rem + 2.5vw, 3rem);
+	font-size: clamp(2.5rem, 2rem + 2.5vw, 4rem);
+	text-align: center;
+	margin-top: var(--spacing-lg);
 }
 
 h2 {
-	font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
+	font-size: clamp(1.75rem, 1.5rem + 1.25vw, 2.5rem);
+	display: inline-block;
+	position: relative;
 }
 
-img, picture, iframe {
-	max-width: 100%;
-	display: block;
-}
+	h2::after {
+		content: '';
+		position: absolute;
+		bottom: -8px;
+		left: 0;
+		width: 50px;
+		height: 3px;
+		background-color: var(--primary-color);
+		border-radius: 2px;
+	}
 
 a {
 	color: var(--primary-color);
@@ -131,35 +140,33 @@ a {
 
 	a:hover {
 		color: var(--primary-hover);
-		text-decoration: underline;
 	}
+
 /* =========================================
-   4. ШАПКА ТА НАВІГАЦІЯ (Mobile First)
+   4. ШАПКА ТА НАВІГАЦІЯ
    ========================================= */
 .header {
-	background-color: var(--card-bg);
+	background-color: rgba(var(--bg-color), 0.9);
+	backdrop-filter: blur(10px);
 	border-bottom: 1px solid var(--border-color);
-	position: sticky; /* Липка шапка за вимогою п.10 */
+	position: sticky;
 	top: 0;
 	z-index: 100;
 }
 
 .header__container {
-	padding: var(--spacing-md);
+	padding: var(--spacing-sm) var(--spacing-md);
 }
 
 .header__logo {
 	font-size: 1.5rem;
-	font-weight: 700;
-	color: var(--primary-color);
-	display: inline-block;
-	margin-bottom: var(--spacing-sm);
+	font-weight: 600;
+	font-family: var(--font-heading);
 }
 
-/* Мобільне меню без JS через <details> (вимога з таблиці) */
 .nav__summary {
 	cursor: pointer;
-	font-weight: 600;
+	font-weight: 500;
 	padding: var(--spacing-sm) 0;
 	color: var(--primary-color);
 }
@@ -174,80 +181,121 @@ a {
 
 .nav__link {
 	color: var(--text-color);
+	font-weight: 500;
 	display: block;
-	padding: 0.25rem 0;
 }
 
-	.nav__link[aria-current="page"],
-	.nav__link:hover {
+	.nav__link[aria-current="page"], .nav__link:hover {
 		color: var(--primary-color);
-		font-weight: bold;
 	}
 
 /* =========================================
-   5. СЕКЦІЯ "ПРО МЕНЕ" (Mobile First)
+   5. СЕКЦІЯ "ПРО МЕНЕ"
    ========================================= */
-/* Фото над текстом, по центру */
 .about__container {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--spacing-lg);
 	align-items: center;
-	text-align: center;
+}
+
+.about__picture {
+	display: block;
+	width: 100%;
+	max-width: 350px;
+	margin: 0 auto;
 }
 
 .about__img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
 	border-radius: var(--radius-md);
 	box-shadow: var(--shadow-md);
+	background-color: var(--border-color);
+}
+
+.about__bio p {
+	margin-bottom: var(--spacing-md);
+}
+
+.about__sidebar {
+	background-color: var(--card-bg);
+	padding: var(--spacing-md);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-sm);
+	border: 1px solid var(--border-color);
 	width: 100%;
-	max-width: 250px;
 }
 
 .about__contacts-list {
 	list-style: none;
-	text-align: left;
-	margin-top: var(--spacing-md);
 }
 
 	.about__contacts-list li {
 		margin-bottom: var(--spacing-sm);
+		padding-bottom: var(--spacing-sm);
+		border-bottom: 1px dashed var(--border-color);
 	}
 
+		.about__contacts-list li:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+
 /* =========================================
-   6. НАВИЧКИ (CSS-шкала)
+   6. НАВИЧКИ (Стильний Progress Bar)
    ========================================= */
 #skill ul {
 	list-style: none;
+	padding: 0;
 }
 
 #skill li {
 	margin-bottom: var(--spacing-lg);
-	position: relative; /* Для позиціонування кольорової смуги */
+	position: relative;
+	padding-bottom: 12px;
+	font-weight: 500;
 }
 
-	/* Сіра смуга фону */
 	#skill li::after {
 		content: '';
-		display: block;
+		position: absolute;
+		bottom: -12px;
+		left: 0;
 		width: 100%;
-		height: 8px;
+		height: 16px;
 		background-color: var(--border-color);
-		border-radius: 4px;
-		margin-top: var(--spacing-sm);
+		border-radius: 10px;
+		box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
 	}
 
-/* Кольорова смуга прогресу */
 .skill-level {
 	position: absolute;
-	bottom: 0;
+	bottom: -12px;
 	left: 0;
-	height: 8px;
-	background-color: var(--primary-color);
-	border-radius: 4px;
-	font-size: 0; /* Ховаємо текстові відсотки */
+	height: 16px;
+	background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+	border-radius: 10px;
+	font-size: 0;
+	z-index: 2;
+	box-shadow: 0 3px 8px rgba(106, 128, 106, 0.4);
+	transition: width 1s ease-in-out;
 }
 
-	/* Значення шкали */
+	.skill-level::after {
+		content: attr(data-level) '%';
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #fff;
+		font-size: 0.7rem;
+		font-weight: bold;
+		letter-spacing: 0.5px;
+	}
+
 	.skill-level[data-level="75"] {
 		width: 75%;
 	}
@@ -273,73 +321,146 @@ a {
 	}
 
 /* =========================================
-   7. КАРТКИ ТА ГАЛЕРЕЯ (Mobile First)
+   7. КАРТКИ ТА ГАЛЕРЕЯ (Grid)
    ========================================= */
-/* 1 колонка для мобільного */
 .hobby-grid {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: var(--spacing-md);
 }
 
 .hobby-card {
 	background-color: var(--card-bg);
-	padding: var(--spacing-md);
+	padding: var(--spacing-lg) var(--spacing-md);
 	border-radius: var(--radius-md);
 	box-shadow: var(--shadow-sm);
 	text-align: center;
+	border: 1px solid var(--border-color);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+	.hobby-card:hover:not(:active) {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-md);
+	}
 
 .hobby-card__icon {
-	font-size: 2.5rem;
+	font-size: 3rem;
 	display: block;
-	margin-bottom: var(--spacing-sm);
+	margin-bottom: var(--spacing-md);
+	animation: float 4s ease-in-out infinite;
 }
 
-/* Базове оформлення форми */
+.travel-gallery {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--spacing-md);
+}
+
+.travel-gallery__item {
+	margin: 0;
+}
+
+	.travel-gallery__item img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		border-radius: var(--radius-md);
+		box-shadow: var(--shadow-sm);
+	}
+
+/* =========================================
+   8. СПИСКИ (Книги, Фільми) 
+   ========================================= */
+ul:not(.nav__list):not(.about__contacts-list):not(#skill ul) {
+	list-style: none;
+	display: grid;
+	gap: var(--spacing-md);
+	grid-template-columns: 1fr;
+}
+
+	ul:not(.nav__list):not(.about__contacts-list):not(#skill ul) li {
+		background-color: var(--card-bg);
+		padding: var(--spacing-md);
+		border-radius: var(--radius-md);
+		box-shadow: var(--shadow-sm);
+		border: 1px solid var(--border-color);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
+	}
+
+	/* Обкладинки книг і постерів */
+	ul:not(.nav__list):not(.about__contacts-list):not(#skill ul) img {
+		width: 100%;
+		max-width: 220px;
+		height: auto;
+		aspect-ratio: 2 / 3;
+		object-fit: cover;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+		margin: 0 auto;
+	}
+
+/* Зірковий рейтинг CSS */
+.star-rating {
+	--percent: calc(var(--rating) / 10 * 100%);
+	display: inline-block;
+	font-size: 1.2rem;
+	line-height: 1;
+	background: linear-gradient(90deg, #eab308 var(--percent), var(--border-color) var(--percent));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	letter-spacing: 2px;
+}
+
+	.star-rating::before {
+		content: '★★★★★★★★★★';
+	}
+
+/* =========================================
+   9. ФОРМА
+   ========================================= */
 .form-group {
 	margin-bottom: var(--spacing-md);
 	display: flex;
 	flex-direction: column;
 }
 
-	.form-group input,
-	.form-group select,
-	.form-group textarea {
-		padding: 0.75rem;
+	.form-group input, .form-group select, .form-group textarea {
+		padding: 1rem;
 		border: 1px solid var(--border-color);
-		border-radius: var(--radius-md);
+		border-radius: 8px;
 		font-family: var(--font-main);
-		margin-top: 0.25rem;
+		margin-top: 0.5rem;
+		background-color: var(--bg-color);
+		color: var(--text-color);
 	}
 
 .btn-submit {
 	background-color: var(--primary-color);
 	color: #fff;
 	border: none;
-	padding: 0.75rem 1.5rem;
-	border-radius: var(--radius-md);
+	padding: 1rem 2rem;
+	border-radius: 8px;
 	cursor: pointer;
-	font-weight: bold;
-	width: 100%; /* Кнопка на всю ширину для мобільних */
-}
-/* =========================================
-   8. АВТОМАТИЧНА СІТКА (Вимога п.5 - Grid)
-   ========================================= */
-/* Використовуємо auto-fit, щоб картки самі шикувалися в 1, 2 або 4 колонки 
-   залежно від ширини екрана (без додаткових медіа-запитів) */
-.hobby-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	gap: var(--spacing-md);
+	font-weight: 600;
+	width: 100%;
+	transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
+	.btn-submit:hover {
+		background-color: var(--primary-hover);
+	}
+
+	.btn-submit:active {
+		transform: scale(0.98);
+	}
 
 /* =========================================
-   9. ПЛАНШЕТНИЙ МАКЕТ (>= 768px)
+   10. МЕДІА-ЗАПИТИ (Планшет та Десктоп)
    ========================================= */
 @media (min-width: 768px) {
-	/* Навігація: горизонтальний ряд під логотипом */
 	.header__container {
 		display: flex;
 		flex-direction: column;
@@ -348,180 +469,171 @@ a {
 	}
 
 	.nav__summary {
-		display: none; /* Ховаємо слово "Меню" (бургер) */
+		display: none;
 	}
 
-	/* Примусово показуємо список, навіть якщо <details> закритий */
 	.nav__list {
 		display: flex !important;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
 		padding-top: 0;
-	}
-
-	/* Секція "Про мене": Фото ліворуч, текст праворуч (Flexbox) */
-	.about__container {
-		flex-direction: row;
-		text-align: left;
-		align-items: flex-start;
-	}
-
-	.about__img {
-		flex: 0 0 35%; /* Фото займає 35% ширини */
-	}
-
-	.about__bio {
-		flex: 1; /* Текст займає решту простору */
-	}
-
-	/* Галерея подорожей: Сітка 2 колонки */
-	.travel-gallery {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
 		gap: var(--spacing-md);
 	}
 
-	/* Вирівнювання форми контактів у 2 колонки */
+	.about__container {
+		flex-direction: row;
+		align-items: stretch;
+	}
+
+	.about__picture {
+		flex: 0 0 35%;
+		max-width: 100%;
+	}
+
+	.about__bio {
+		flex: 1;
+	}
+
+	.travel-gallery {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
 	.contact-form {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: var(--spacing-md);
 	}
 
-	.form-group:nth-child(3),
-	.form-group:nth-child(4),
-	.form-group--checkbox,
-	.btn-submit {
+	.form-group:nth-child(3), .form-group:nth-child(4), .form-group--checkbox, .btn-submit {
 		grid-column: span 2;
+	}
+
+	/* --- ДВОКОЛОНКОВИЙ ДИЗАЙН ДЛЯ КНИГ І ФІЛЬМІВ --- */
+	ul:not(.nav__list):not(.about__contacts-list):not(#skill ul) li {
+		/* Перетворюємо саму картку на сітку з двох колонок: Постер (220px) | Текст */
+		display: grid;
+		grid-template-columns: 220px 1fr;
+		align-items: start;
+	}
+
+	ul:not(.nav__list):not(.about__contacts-list):not(#skill ul) img {
+		max-width: 100%; /* Постер заповнює свою колонку 220px */
+		margin: 0;
 	}
 }
 
-
-/* =========================================
-   10. ДЕСКТОПНИЙ МАКЕТ (>= 1200px)
-   ========================================= */
 @media (min-width: 1200px) {
-	/* Обмеження ширини тексту для кращої читабельності (вимога таблиці) */
 	p {
-		max-width: 70ch;
+		max-width: 75ch;
 	}
 
-	/* Центрування контенту на широких екранах */
 	section {
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: var(--spacing-lg) 0;
 	}
 
-	/* Навігація: горизонтальне меню в один ряд із логотипом */
 	.header__container {
 		max-width: 1200px;
 		margin: 0 auto;
 		flex-direction: row;
 		justify-content: space-between;
+		align-items: center;
 	}
 
-	/* Секція "Про мене": 3 колонки (Фото + Біо + Бічна панель контактів) через Grid */
 	.about__container {
 		display: grid;
-		grid-template-columns: 300px 1fr 250px;
+		grid-template-columns: 280px 1fr 300px;
 		gap: var(--spacing-lg);
+		align-items: start;
 	}
 
-	/* Галерея: "Мозаїка" з різними span (вимога таблиці) */
+	.about__picture {
+		width: 100%;
+		max-width: 280px;
+		flex: none;
+	}
+
 	.travel-gallery {
 		grid-template-columns: repeat(3, 1fr);
-		grid-auto-rows: 250px;
+		grid-auto-rows: 300px;
 	}
 
-	/* Робимо перше фото великим (займає 2 колонки і 2 ряди) */
 	.travel-gallery__item:nth-child(1) {
 		grid-column: span 2;
 		grid-row: span 2;
 	}
 
-	/* Змушуємо зображення заповнювати свої клітинки мозаїки */
 	.travel-gallery__item img {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
-		border-radius: var(--radius-md);
 	}
+
+	/* На десктопі показуємо по 2 картки в рядку */
+	ul:not(.nav__list):not(.about__contacts-list):not(#skill ul) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+		/* Оскільки карток тепер дві поруч, робимо колонку постера всередині трохи меншою, щоб тексту було комфортно */
+		ul:not(.nav__list):not(.about__contacts-list):not(#skill ul) li {
+			grid-template-columns: clamp(150px, 18vw, 220px) 1fr;
+		}
 }
+
 /* =========================================
-   11. АНІМАЦІЇ, ПЕРЕХОДИ ТА ПСЕВДОЕЛЕМЕНТИ (Вимоги 8-9)
+   11. АНІМАЦІЇ ТА ТАБЛИЦІ
    ========================================= */
-
-/* Декоративний елемент для заголовків H2 (псевдоелемент ::before) */
-h2 {
-	display: inline-block;
-	position: relative;
-}
-
-	h2::before {
-		content: '';
-		position: absolute;
-		bottom: -5px;
-		left: 0;
-		width: 40%;
-		height: 3px;
-		background-color: var(--primary-color);
-		border-radius: 2px;
-	}
-
-/* Інтерактивні картки (додатковий transition) */
-.hobby-card {
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-	/* Використання псевдокласу :not() та :hover */
-	.hobby-card:hover:not(:active) {
-		transform: translateY(-5px);
-		box-shadow: var(--shadow-md);
-	}
-
-/* Анімація появи (@keyframes) для іконок хобі */
 @keyframes float {
-	0% {
+	0%, 100% {
 		transform: translateY(0);
 	}
 
 	50% {
-		transform: translateY(-8px);
-	}
-
-	100% {
-		transform: translateY(0);
+		transform: translateY(-10px);
 	}
 }
 
-.hobby-card__icon {
-	display: inline-block;
-	/* Запускаємо анімацію */
-	animation: float 4s ease-in-out infinite;
+.table-container {
+	overflow-x: auto;
+	margin-top: var(--spacing-md);
 }
 
-/* Стиль для кнопки при натисканні (псевдоклас :active) */
-.btn-submit:active {
-	transform: scale(0.98);
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: var(--card-bg);
+	border-radius: var(--radius-md);
+	overflow: hidden;
+	box-shadow: var(--shadow-sm);
 }
 
-.btn-submit {
-	transition: background-color 0.3s ease, transform 0.1s ease;
+caption {
+	padding: var(--spacing-sm);
+	font-weight: 500;
+	font-style: italic;
+	color: var(--secondary-color);
+	text-align: left;
 }
 
-	.btn-submit:hover {
-		background-color: var(--primary-hover);
-	}
+th, td {
+	padding: 1rem;
+	text-align: left;
+	border-bottom: 1px solid var(--border-color);
+}
 
-/* =========================================
-   12. ДОСТУПНІСТЬ (Вимкнення анімацій)
-   ========================================= */
+th {
+	background-color: rgba(106, 128, 106, 0.1);
+	color: var(--text-color);
+	font-weight: 600;
+}
+
+tr:last-child th, tr:last-child td {
+	border-bottom: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*, *::before, *::after {
 		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
 		scroll-behavior: auto !important;
 	}
